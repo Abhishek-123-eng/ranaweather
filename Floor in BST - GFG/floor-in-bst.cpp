@@ -58,25 +58,22 @@ int main() {
 
 int floor(Node* root, int x) {
     // Code here
-     if(root==NULL)return -1;
+       if(root==NULL)return -1;
     int ceil=-1;
     while(root)
     {
-        if(root->data==x)
+        if(x==root->data)
         {
             ceil=root->data;
             return ceil;
         }
-        if(x>root->data)
+        if(x>=root->data)
         {
             ceil=root->data;
             root=root->right;
         }
         else
-        {
-            root=root->left;
-        }
-        
+        root=root->left;
     }
     return ceil;
 }
